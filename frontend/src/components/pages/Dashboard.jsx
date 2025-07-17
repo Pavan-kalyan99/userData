@@ -1,52 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaCog, FaTimes } from "react-icons/fa";
 import axios from "axios";
-// import.meta.env.VITE_API_URL
 
 const API = "https://userdata-k5b2.onrender.com";
-
-// const users = [
-//   {
-//     id: 1,
-//     name: "Michael Holz",
-//     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-//     date: "04/10/2013",
-//     role: "Admin",
-//     status: "Active",
-//   },
-//   {
-//     id: 2,
-//     name: "Paula Wilson",
-//     avatar: "https://randomuser.me/api/portraits/women/2.jpg",
-//     date: "05/08/2014",
-//     role: "Publisher",
-//     status: "Active",
-//   },
-//   {
-//     id: 3,
-//     name: "Antonio Moreno",
-//     avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-//     date: "11/05/2015",
-//     role: "Publisher",
-//     status: "Suspended",
-//   },
-//   {
-//     id: 4,
-//     name: "Mary Saveley",
-//     avatar: "https://randomuser.me/api/portraits/women/4.jpg",
-//     date: "06/09/2016",
-//     role: "Reviewer",
-//     status: "Active",
-//   },
-//   {
-//     id: 5,
-//     name: "Martin Sommer",
-//     avatar: "https://randomuser.me/api/portraits/men/5.jpg",
-//     date: "12/08/2017",
-//     role: "Moderator",
-//     status: "Inactive",
-//   },
-// ];
 
 const statusColors = {
     Active: "text-green-600",
@@ -63,7 +19,7 @@ const Dashboard = () => {
         const fetchUsers = async () => {
             try {
                 const res = await axios.get(`${API}/api/auth/allusers`);
-                console.log('res::', res)
+                // console.log('res::', res)
                 setUsers(res.data.users);
                 setError('');
             } catch (err) {

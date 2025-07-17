@@ -26,26 +26,9 @@ const API = "https://userdata-k5b2.onrender.com";
         setError(null);
         setLoading(true);
 
-        // try {
-        //   const res = await axios.post("http://localhost:8080/api/auth/register", {
-        //     method: "POST",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(formData),
-        //   });
-
-        //   if (!res.ok) throw new Error("Registration failed");
-
-        //   const data = await res.json();
-        //   console.log("Registration successful:", data);
-        //   // Redirect or notify user here
-        // } catch (err) {
-        //   setError(err.message);
-        // }
-        //  finally {
-        //   setLoading(false);
-        // }
+        
         // 
-        console.log('data::', formData)
+        // console.log('data::', formData)
         try {
             const res = await axios.post(`${API}/api/auth/register`, formData);
             console.log("res::", res)
@@ -74,7 +57,7 @@ const API = "https://userdata-k5b2.onrender.com";
                 {/* SIGN UP Banner */}
                 <Link to='/'>
 
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-400 text-white px-8 py-2 rounded-t-md font-semibold">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-400 text-white px-8 py-2 rounded-t-md font-semibold">
                         LOGIN
                     </div>
                 </Link>
@@ -156,8 +139,8 @@ const API = "https://userdata-k5b2.onrender.com";
                     {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full mt-6 bg-cyan-400 text-white font-bold py-2 rounded-md hover:bg-cyan-500 transition"
-                        disabled={loading}
+                        className="w-full mt-6 bg-teal-400 text-white font-bold py-2 rounded-md hover:bg-teal-500 transition"
+  disabled={loading || !formData.email || !formData.password || !formData.dob || !formData.name}
                     >
                         {loading ? "Registering..." : "REGISTER"}
                     </button>

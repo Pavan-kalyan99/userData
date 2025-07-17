@@ -30,7 +30,7 @@ const Login = () => {
 
         try {
             const res = await axios.post(`${API}/api/auth/login`, formData);
-            console.log("res::", res)
+            // console.log("res::", res)
 
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token);
@@ -49,7 +49,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-600 to-teal-800 flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-b from-teal-900 to-teal-300 flex items-center justify-center">
             <form
                 onSubmit={handleSubmit}
                 className="bg-[#1e2a38] w-96 p-8 rounded-xl shadow-xl relative"
@@ -57,7 +57,7 @@ const Login = () => {
                 {/* SIGN IN Banner */}
                 <Link to='/register'>
 
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-400 text-white px-8 py-2 rounded-t-md font-semibold">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-400 text-white px-8 py-2 rounded-t-md font-semibold">
                         SIGN IN
                     </div>
                 </Link>
@@ -149,8 +149,8 @@ const Login = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full mt-6 bg-cyan-400 text-white font-bold py-2 rounded-md hover:bg-cyan-500 transition"
-                        disabled={loading}
+                        className="w-full mt-6  bg-teal-400 text-white font-bold py-2 rounded-md hover:bg-teal-500 transition cursor-pointer"
+  disabled={loading || !formData.email || !formData.password}
                     >
                         {loading ? "Logging in..." : "LOGIN"}
                     </button>
