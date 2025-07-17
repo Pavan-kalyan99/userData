@@ -7,11 +7,8 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173',
-
-  // origin: "https://machinetest-y6dp.onrender.com/",
-    credentials: true,
-
+  origin: ['http://localhost:5173', 'https://user-data-one-pi.vercel.app'],
+  credentials: true,
 }));
 
 const PORT = process.env.PORT || 8080;
