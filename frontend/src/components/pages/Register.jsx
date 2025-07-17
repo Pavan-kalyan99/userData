@@ -31,7 +31,7 @@ const API = "https://userdata-k5b2.onrender.com";
         // console.log('data::', formData)
         try {
             const res = await axios.post(`${API}/api/auth/register`, formData);
-            console.log("res::", res)
+            // console.log("res::", res)
 
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token);
@@ -49,7 +49,7 @@ const API = "https://userdata-k5b2.onrender.com";
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-600 to-teal-800 flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-b from-teal-900 to-teal-300 flex items-center justify-center">
             <form
                 onSubmit={handleSubmit}
                 className="bg-[#1e2a38] w-96 p-8 rounded-xl shadow-xl relative"
