@@ -13,7 +13,7 @@ const Register = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const API = "https://usermanagement-l5l5.onrender.com";
+const API = "https://userdata-k5b2.onrender.com";
 
 
     const handleChange = (e) => {

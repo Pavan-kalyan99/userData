@@ -3,7 +3,7 @@ import { FaCog, FaTimes } from "react-icons/fa";
 import axios from "axios";
 // import.meta.env.VITE_API_URL
 
-const API = "https://usermanagement-l5l5.onrender.com";
+const API = "https://userdata-k5b2.onrender.com";
 
 // const users = [
 //   {
